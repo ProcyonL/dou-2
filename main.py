@@ -4,9 +4,11 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from telegram import Bot
 
-TELEGRAM_TOKEN = "SEU_TOKEN_AQUI"
-CHAT_ID = "SEU_CHAT_ID_AQUI"
+import os
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 CHECK_INTERVAL_MINUTES = 2
+
 
 bot = Bot(token=TELEGRAM_TOKEN)
 ultimo_conteudo = None
