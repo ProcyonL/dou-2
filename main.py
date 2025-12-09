@@ -81,5 +81,11 @@ if __name__ == "__main__":
     if TELEGRAM_TOKEN is None or CHAT_ID is None:
         print("❌ ERRO: Variáveis TELEGRAM_TOKEN e CHAT_ID não configuradas no Render.")
     else:
-        main()
+        print("🤖 Bot iniciado com sucesso!")
+        while True:
+            try:
+                main()
+            except Exception as e:
+                print(f"⚠️ Erro no loop principal: {e}")
+            time.sleep(CHECK_INTERVAL)  # mantém o bot rodando para sempre
 
